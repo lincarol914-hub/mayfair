@@ -221,9 +221,14 @@ section[id] { scroll-margin-top: var(--header-h); }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 70% 20%, rgba(140,28,43,0.55), transparent 60%),
-    linear-gradient(160deg, #2a1410 0%, #1c1612 45%, #120d0a 100%);
+  background-color: #1c1612;
+  background-image:
+    linear-gradient(95deg, rgba(15,11,9,0.94) 0%, rgba(17,12,10,0.78) 38%, rgba(20,14,11,0.46) 70%, rgba(30,16,14,0.6) 100%),
+    radial-gradient(ellipse at 72% 22%, rgba(140,28,43,0.32), transparent 62%),
+    url("images/hero.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .hero-pattern {
   position: absolute;
