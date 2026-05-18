@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - claude/bilingual-restaurant-website-5DVkf
+      - claude/fix-pages-permission-error-KgyWz
   workflow_dispatch:
 
 permissions:
@@ -27,8 +28,6 @@ jobs:
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
