@@ -297,7 +297,7 @@
 
   /* ---------- 3. 状态与工具 ---------- */
   var STORE_KEY = "mingxuan-lang";
-  var lang = "zh";
+  var lang = "en";
 
   function t(key) {
     return (I18N[lang] && I18N[lang][key]) || key;
@@ -589,14 +589,10 @@
     var yearEl = $("#footerYear");
     if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-    // 选择初始语言:本地存储 > 浏览器语言 > 中文
+    // 选择初始语言:用户存储的偏好优先,否则默认英文
     var saved;
     try { saved = localStorage.getItem(STORE_KEY); } catch (e) {}
-    if (saved === "zh" || saved === "en") {
-      lang = saved;
-    } else {
-      lang = (navigator.language || "zh").toLowerCase().indexOf("zh") === 0 ? "zh" : "en";
-    }
+    lang = (saved === "zh" || saved === "en") ? saved : "en";
 
     initReveal();
     applyLanguage(lang, true);
